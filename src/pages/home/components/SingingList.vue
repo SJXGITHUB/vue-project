@@ -1,15 +1,14 @@
 <template>
-  <div class="my-5">
-    <p class="text-lg font-bold mb-5">播单推荐</p>
-    <div class=" flex  flex-nowrap items-center ">
-        <div v-for="(item,index) of singingList" :key="index" class="flex">
-          <div class="">
-            <img :src="item.img" class="w-20 h-20 " />
-            <p>{{ item.song }}</p>
-          </div>
+  <div class="my-5 bg-gray-100 rounded-lg scroll-container">
+    <p class="relative z-20 left-0 top-0 text-lg font-bold mb-1 p-3">播单推荐</p>
+    <div class=" flex  flex-nowrap items-center px-3 scroll-content">
+      <div v-for="(item,index) of singingList" :key="index" >
+        <div class="text-center mx-5 ">
+          <img :src="item.img" class="w-20 h-20 rounded-lg  " />
+          <p class="my-2">{{ item.song }}</p>
         </div>
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -42,8 +41,25 @@ export default {
       ],
     };
   },
+  methods:{
+    mounted() {
+      const scrollContent = this.$el.querySelector('.scroll-content');
+      const scrollContainer = this.$el.querySelector('.scroll-container');
+      scrollContainer.style.width = scrollContent.offsetWidth + 'px';
+    }
+  }
 
 };
 </script>
 
-<style></style>
+<style>
+.scroll-container {
+  overflow-x: scroll;
+  white-space: nowrap; /* 防止内容换行 */
+}
+
+.scroll-content {
+  width: 600px; /* 滚动内容的宽度 */
+}
+
+</style>
