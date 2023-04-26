@@ -6,44 +6,37 @@
 -->
 
 <template>
-  <div class="my-5  ">
-    <swiper
-      :loop="true"
-      :autoplay="true"
-      :modules="modules"
-      :slides-per-view="1"
-      :space-between="50"
-      @swiper="onSwiper"
-      class=""
-    >
-      <swiper-slide>
-        <div class="w-full  bg-yellow-200 p-10 swiper-autoheight">Slide 1</div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="w-full  bg-yellow-200 p-10 swiper-autoheight">Slide 2</div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="w-full  bg-yellow-200 p-10 swiper-autoheight">Slide 3</div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="w-full  bg-yellow-200 p-10 swiper-autoheight">Slide 4</div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="w-full  bg-yellow-200 p-10 swiper-autoheight">Slide 5</div>
-      </swiper-slide>
+  <div class="my-5">
+  <swiper
+    :loop="true"
+    :spaceBetween="30"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 3000,
+      disableOnInteraction: true,
+    }"
+    :pagination="{
+      clickable: true,
+    }"
+    :modules="modules"
+  >
 
-    </swiper>
+    <swiper-slide v-for="(item ,index)  of swiperList" :key="index">
+     <div class="py-10  w-full bg-purple-300">{{ item }}</div>
+    </swiper-slide>
 
+  </swiper>
   </div>
 </template>
 
 <script>
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { height } from 'tailwindcss/lib/plugins';
 
 export default {
   name: 'TeaSwiper',
@@ -51,23 +44,14 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  data() {
-    return {
-      spaceBetween: 30,
-    };
-  },
+data(){
+    return{
+      swiperList:['11','222','333','444']
+    }
+},
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    // const onSlideChange = () => {
-    //   console.log('slide change');
-    // };
-
     return {
-      onSwiper,
-      // onSlideChange,
-      modules: [Navigation, Pagination, Scrollbar, A11y],
+      modules: [Autoplay,Navigation, Pagination, Scrollbar, A11y],
     };
   },
 

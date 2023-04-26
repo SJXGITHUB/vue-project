@@ -4,12 +4,12 @@ import HomeHeader from '@/components/Header.vue';
 
 </script>
 
-<template>
+<template >
   <home-header ></home-header>
 
   <router-view />
 </template>
 
-<style scoped>
+<style >
 
 </style>
