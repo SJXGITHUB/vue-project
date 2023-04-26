@@ -1,6 +1,6 @@
 <template>
   <div class="absolute left-0 top-0 w-full
-              flex items-center justify-between py-2 px-5">
+              flex items-center justify-between py-2 px-5 bg-white">
     <div v-for="(item ,index) of menu" :key="index" class="">
       <router-link :to="item.route">
         <p v-if="index===defaulIndex"
