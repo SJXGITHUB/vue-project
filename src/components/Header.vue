@@ -1,7 +1,7 @@
 <template>
   <div class="absolute left-0 top-0 w-full
               flex items-center justify-between py-2 px-5 bg-white">
-    <div v-for="(item ,index) of menu" :key="index" class="">
+    <div v-for="(item ,index) of menu" :key="index" >
       <router-link :to="item.route">
         <p v-if="index===defaulIndex"
            class="text-lg font-bold border-b-4 border-red-600"
@@ -31,8 +31,8 @@ export default {
           route: '/tea',
         },
         {
-          name: '声音广场',
-          route: '/tea',
+          name: '分类',
+          route: '/classify',
         },
         {
           name: '亲子',
