@@ -1,6 +1,6 @@
 <template>
   <div class="my-5 bg-gray-100 rounded-lg scroll-container">
-    <p class="relative z-20 left-0 top-0 text-lg font-bold mb-1 p-3">播单推荐</p>
+    <p class=" text-lg font-bold mb-1 p-3">播单推荐</p>
     <div class=" flex  flex-nowrap items-center px-3 scroll-content">
       <div v-for="(item,index) of singingList" :key="index" >
         <div class="text-center mx-5 ">

@@ -9,7 +9,7 @@
                class="text-base  border-l-4 border-red-700 px-3 text-red-700"
             >{{ item.modTitle }}</p>
             <p v-else @click="handleClick(index)"
-               class="text-gray-600 px-3">
+               class="text-gray-600 px-3 ">
               {{ item.modTitle }}</p>
 
           </li>
@@ -23,7 +23,7 @@
               <div v-for="(item,index) of modCon" :key="index" class=" w-1/3">
                 <div class="w-20 h-20 ">
                   <img :src="item.pic" class="  rounded-md">
-                  <p>{{item.title}}</p>
+                  <p class="text-xs">{{item.title}}</p>
                 </div>
 
 
@@ -55,7 +55,7 @@ export default {
     },
     getWeekInfoSucc(res) {
       res = res.data;
-      console.log(res);
+      // console.log(res);
       this.List = res;
       this.modCon = this.List[0].modCon
       this.modTitle = this.List[0].modTitle

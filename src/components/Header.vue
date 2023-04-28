@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'HomeHeader',
 
@@ -35,8 +36,8 @@ export default {
           route: '/classify',
         },
         {
-          name: '亲子',
-          route: '/tea',
+          name: '备忘录',
+          route: '/memo',
         },
         {
           name: '情感',
