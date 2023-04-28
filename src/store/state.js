@@ -1,13 +1,13 @@
-let defaulIndex = 0
+let defaultCity = '湖州'
 try {
-  if (localStorage.index) {
-    defaulIndex = localStorage.index
+  if (localStorage.city) {
+    defaultCity = localStorage.city
   }
 } catch (e) {
   console.log(e);
 }
 
 export default {
-  index: defaulIndex
+  city: defaultCity
 
 }
